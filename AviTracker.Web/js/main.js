@@ -8,7 +8,7 @@ ngTracker.constant('TrackerApiConfig', [
 
 ngTracker.config(function ($routeProvider) {
     $routeProvider
-        .when('/', {
+        .when('/', { 
             controller: 'ClientListCtrl',
             templateUrl: '/templates/client_list.html'
         }).
