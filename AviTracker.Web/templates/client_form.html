@@ -1,0 +1,28 @@
+﻿
+<h3>Client Form</h3>
+
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="client-name">Client Name</label>
+    <div class="controls">
+      <input type="text" id="client-name" placeholder="Client Name" ng-model="client.clientName">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="contact-name">Contact Name</label>
+    <div class="controls">
+      <input type="text" id="contact-name" placeholder="Conttact Name" ng-model="client.contactName">
+    </div>
+  </div><div class="control-group">
+    <label class="control-label" for="email-address">Email Address</label>
+    <div class="controls">
+      <input type="text" id="email-address" placeholder="Email Address" ng-model="client.emailAddress">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-success" ng-click="save()">Save</button>
+      <button type="submit" class="btn btn-small" ng-click="reset()">Cancel</button>
+    </div>
+  </div>
+</form>
