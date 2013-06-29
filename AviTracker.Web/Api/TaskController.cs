@@ -6,7 +6,6 @@ using System.Net.Http;
 using System.Web.Http;
 using AviTracker.Web.Models;
 using AviTracker.Web.Repositories;
-using MvcApplication1.Models;
 
 namespace MvcApplication1.Api
 {
@@ -26,9 +25,9 @@ namespace MvcApplication1.Api
         }
 
         // GET api/Task/5
-        public ProjectTask GetProjectTask(int projectId, int projectTaskId)
+        public ProjectTask GetProjectTask(int projectId, int taskId)
         {
-            ProjectTask projecttask = _projectTasksRepository.Find(projectTaskId);
+            ProjectTask projecttask = _projectTasksRepository.Find(taskId);
             if (projecttask == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
@@ -50,7 +49,7 @@ namespace MvcApplication1.Api
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
 
-            _projectTasksRepository.Update(projectTask);
+            _projectTasksRepository.Update(projectTask, id);
 
             try
             {

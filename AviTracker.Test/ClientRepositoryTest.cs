@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using AviTracker.Web.Models;
 using AviTracker.Web.Repositories;
-using MvcApplication1.Models;
 using NUnit.Framework;
 using StructureMap;
 

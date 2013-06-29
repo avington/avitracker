@@ -6,26 +6,43 @@ ngTracker.constant('TrackerApiConfig', [
     { name: 'task', url: '/api/project/:projectId/project/:projectTaskId', params: { projectId: '@projectId', projectTaskId: '@projectTaskId' } }
 ]);
 
-ngTracker.config(function ($routeProvider) {
+ngTracker.config(function($routeProvider) {
     $routeProvider
-        .when('/', { 
-            controller: 'ClientListCtrl',
+        .when('/', {
+            controller: 'ClientListController',
             templateUrl: '/templates/client_list.html'
         }).
         when('/new_client', {
-            controller: 'ClientNewCtrl',
+            controller: 'ClientNewController',
+            templateUrl: '/templates/client_form.html'
+        })
+        .when('/edit_client/:clientId', {
+            controller: 'ClientEditController',
             templateUrl: '/templates/client_form.html'
         }).
-        when('/client/:id', {
-            controller: 'ProjectListCtrl',
+        when('/client/:clientId', {
+            controller: 'ProjectListController',
             templateUrl: '/templates/project_list.html'
         }).
-        when('/new_project', {
-            controller: 'ProjectNewCtrl',
+        when('/client/:clientId/new_project', {
+            controller: 'ProjectNewController',
             templateUrl: '/templates/project_form.html'
         }).
-        when('/task/:id', {
-            controller: 'TaskListCtrl',
+        when('/client/:clientId/edit_project/:projectId', {
+            controller: 'ProjectEditController',
+            templateUrl: '/templates/project_form.html'
+        }).
+        when('/client/:clientId/project/:projectId/tasks', {
+            controller: 'TaskListController',
             templateUrl: '/templates/task_list.html'
-        });
+        })
+        .when('/client/:clientId/project/:projectId/new_task', {
+            controller: 'TaskFormController',
+            templateUrl: '/templates/task_form.html'
+        })
+        .when('/client/:clientId/project/:projectId/edit_task/:taskId', {
+            controller: 'TaskFormController',
+            templateUrl: '/templates/task_form.html'
+        })
+        .otherwise({ redirectTo: '/' });
 });

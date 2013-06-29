@@ -1,47 +1,76 @@
-﻿<h3>Client Form</h3>
+﻿<div class="container" ng-show='isLoaded'>
+    <h3>Task Form</h3>
 
-<form class="form-horizontal">
-    <div class="control-group">
-        <label class="control-label" for="task-name">Task Name</label>
-        <div class="controls">
-            <input type="text" id="task-name" placeholder="Task Name" ng-model="task.taskName">
+    <form class="form-horizontal">
+    
+        <div class="control-group">
+            <label class="control-label" for="task-name">Task Name</label>
+            <div class="controls">
+                <input type="text" id="task-name" placeholder="Task Name" ng-model="task.taskName">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-    <label class="control-label" for="rate">Rate</label>
-    <div class="controls">
-        <input type="text" id="rate" placeholder="Rate" ng-model="task.rate">
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="hours">Hours</label>
-        <div class="controls">
-            <input type="text" id="hours" placeholder="Hours" ng-model="task.rate">
+    
+        <div class="control-group">
+            <label class="control-label" for="task-description">Task Name</label>
+            <div class="controls">
+                <textarea cols="30" rows="12" id="task-description" ng-model="task.description"></textarea>
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="start-date">Start Date</label>
-        <div class="controls">
-            <input type="text" id="start-date" placeholder="Start Date" ng-model="task.startDate">
+    
+        <div class="control-group">
+            <label class="control-label" for="task-startdate">Start Date</label>
+            <div class="controls">
+                <input avi-datepicker class="input-small" type="text" id="task-startdate" placeholder="Start Date" ng-model="$parent.task.startDate">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="due-date">Due Date</label>
-        <div class="controls">
-            <input type="text" id="due-date" placeholder="Due Date" ng-model="task.dueDate">
+    
+    
+        <div class="control-group">
+            <label class="control-label" for="task-due">Due Date</label>
+            <div class="controls">
+                <input avi-datepicker class="input-small" type="text" id="task-due" placeholder="Due Date" ng-model="$parent.task.dueDate">
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="due-date">Due Date</label>
-        <div class="controls">
-            <select ng-options="taskType.TaskTypeId as taskType.TaskTypeName for taskType in TaskTypes" ng-model="task.taskType">
-                <option style="display: none" value="">Select a Task Type</option>
-            </select>
+    
+    
+        <div class="control-group">
+            <label class="control-label" for="task-type">Task Type</label>
+            <div class="controls">
+                <select id="task-type" ng-model="task.taskType.taskTypeId" ng-options="t.taskTypeId as t.taskTypeName for t in taskTypes">
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <div class="controls">
-            <button type="submit" class="btn btn-success" ng-click="save()">Save</button>
-            <button type="submit" class="btn btn-small" ng-click="reset()">Cancel</button>
+    
+    
+        <div class="control-group">
+            <label class="control-label" for="task-status">Current Status</label>
+            <div class="controls">
+                <select id="task-status" ng-model="task.status.id" ng-options="s.id as s.status for s in statuses">
+                </select>
+            </div>
         </div>
-    </div>
-</form>
+   
+        
+        <div class="control-group">
+            <label class="control-label" for="task-estimated-hours">Estimated Hours</label>
+            <div class="controls">
+                <input  class="input-mini" type="text" id="task-estimated-hours" placeholder="Hours" ng-model="task.estimatedHours">
+            </div>
+        </div>
+    
+        <div class="control-group">
+            <label class="control-label" for="task-rate">Projected Rate</label>
+            <div class="controls">
+                <input class="input-mini" type="text" id="task-rate" placeholder="Rate" ng-model="task.estimatedHours">
+            </div>
+        </div>
+    
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success" ng-click="save()">Save</button>
+                <button type="submit" class="btn btn-small" ng-click="reset()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -4,7 +4,6 @@ using System.Data.Entity;
 using AviTracker.Web.App_Start;
 using AviTracker.Web.Models;
 using AviTracker.Web.Models.ContextConfiguration;
-using MvcApplication1.Models;
 
 namespace AviTracker.Test
 {

@@ -5,8 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using AviTracker.Web.Models;
 using AviTracker.Web.Repositories;
-using MvcApplication1.Models;
 
 namespace AviTracker.Web.Api
 {
@@ -50,7 +50,7 @@ namespace AviTracker.Web.Api
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
 
-            _taskTypeRepository.Update(tasktype);
+            _taskTypeRepository.Update(tasktype, id);
 
             try
             {

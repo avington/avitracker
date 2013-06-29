@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using AviTracker.Web.Models;
 using AviTracker.Web.Models.ContextConfiguration;
-using MvcApplication1.Models;
 
 namespace AviTracker.Web.App_Start
 {
@@ -53,19 +52,19 @@ namespace AviTracker.Web.App_Start
                 context.TaskTypes.Add(type);
             }
 
-            var timeSheetStatuses = new List<TimeSheetStatus>
+            var timeSheetStatuses = new List<TaskStatus>
                 {
-                    new TimeSheetStatus {Status = "Not Started"},
-                    new TimeSheetStatus {Status = "Pending Information"},
-                    new TimeSheetStatus {Status = "Pending Impediment"},
-                    new TimeSheetStatus {Status = "Work in Progress"},
-                    new TimeSheetStatus {Status = "Completed"},
-                    new TimeSheetStatus {Status = "Checked In"}
+                    new TaskStatus {Status = "Not Started"},
+                    new TaskStatus {Status = "Pending Information"},
+                    new TaskStatus {Status = "Pending Impediment"},
+                    new TaskStatus {Status = "Work in Progress"},
+                    new TaskStatus {Status = "Completed"},
+                    new TaskStatus {Status = "Checked In"}
                 };
 
-            foreach (TimeSheetStatus tss in timeSheetStatuses)
+            foreach (TaskStatus tss in timeSheetStatuses)
             {
-                context.TimeSheetStatuses.Add(tss);
+                context.TaskStatuses.Add(tss);
             }
 
             var client = new Client
@@ -79,6 +78,7 @@ namespace AviTracker.Web.App_Start
                 {
                     Description = "This is my first project",
                     ProjectName = "My First Project",
+                    CreatedAt = DateTime.Now,
                     ProjectTasks = new List<ProjectTask>
                         {
                             new ProjectTask
@@ -86,8 +86,9 @@ namespace AviTracker.Web.App_Start
                                     TaskName = "Meet with Client",
                                     TaskType = taskTypes[0],
                                     Rate = 100m,
-                                    Hours = 5m,
+                                    EstimatedHours = 5m,
                                     StartDate = DateTime.Today,
+                                    Status = timeSheetStatuses[3],
                                     Timesheets = new List<Timesheet>
                                         {
                                             new Timesheet
@@ -96,7 +97,7 @@ namespace AviTracker.Web.App_Start
                                                     RevisionNumber = "1000",
                                                     ActualHours = 2,
                                                     StartedAt = DateTime.Now,
-                                                    Status = timeSheetStatuses[3],
+                                                    
                                                     User = user[0]
                                                 },new Timesheet
                                                 {
@@ -104,7 +105,6 @@ namespace AviTracker.Web.App_Start
                                                     RevisionNumber = "1001",
                                                     ActualHours = 2.5m,
                                                     StartedAt = DateTime.Now,
-                                                    Status = timeSheetStatuses[2],
                                                     User = user[0]
                                                 }
                                         }

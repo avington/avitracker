@@ -17,8 +17,8 @@ namespace AviTracker.Web.App_Start
 
             config.Routes.MapHttpRoute(
                 name: "ProjectTaskApi",
-                routeTemplate: "api/project/{projectId}/task/{projectTaskId}",
-                defaults: new { controller = "Task", projectTaskId = RouteParameter.Optional });
+                routeTemplate: "api/project/{projectId}/task/{taskId}",
+                defaults: new { controller = "Task", taskId = RouteParameter.Optional });
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

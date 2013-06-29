@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using AviTracker.Web.Models;
 using AviTracker.Web.Models.ContextConfiguration;
-using MvcApplication1.Models;
 
 namespace AviTracker.Web.App_Start
 {
