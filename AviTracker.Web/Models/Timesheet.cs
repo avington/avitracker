@@ -11,6 +11,6 @@ namespace AviTracker.Web.Models
         public decimal? ActualHours { get; set; }
         public string Description { get; set; }
         public string RevisionNumber { get; set; }
-        public virtual TimeSheetStatus Status { get; set; }
+        
     }
 }

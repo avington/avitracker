@@ -1,4 +1,4 @@
-﻿using MvcApplication1.Models;
+﻿using AviTracker.Web.Models;
 
 namespace AviTracker.Web.Repositories
 {

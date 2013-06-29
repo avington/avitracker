@@ -17,9 +17,10 @@ namespace AviTracker.Web.Repositories
             _dbSet = Context.Set<T>();
         }
 
-        public void Update(T entity)
+        public void Update(T entity, int id)
         {
-            Context.Entry(entity).State = EntityState.Modified;
+            var current = _dbSet.Find(id);
+            Context.Entry(current).CurrentValues.SetValues(entity);
         }
 
         public void Dispose()

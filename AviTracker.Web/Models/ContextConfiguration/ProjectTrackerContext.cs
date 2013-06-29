@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using MvcApplication1.Models;
 
 namespace AviTracker.Web.Models.ContextConfiguration
 {
@@ -24,7 +23,7 @@ namespace AviTracker.Web.Models.ContextConfiguration
         public DbSet<TaskType> TaskTypes { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Timesheet> Timesheets { get; set; }
-        public DbSet<TimeSheetStatus> TimeSheetStatuses { get; set; }
+        public DbSet<TaskStatus> TaskStatuses { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

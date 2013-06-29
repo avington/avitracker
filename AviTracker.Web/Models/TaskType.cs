@@ -1,4 +1,4 @@
-﻿namespace MvcApplication1.Models
+﻿namespace AviTracker.Web.Models
 {
     public class TaskType
     {

@@ -2,7 +2,7 @@
 
 namespace AviTracker.Web.Repositories
 {
-    public interface IProjectRepository : IRepository<Project>
+    public interface IStatusRepository : IRepository<TaskStatus>
     {
          
     }

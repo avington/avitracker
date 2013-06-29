@@ -3,7 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace AviTracker.Web.Models.ContextConfiguration
 {
-    public class TimesheetStatusConfiguration : EntityTypeConfiguration<TimeSheetStatus>
+    public class TimesheetStatusConfiguration : EntityTypeConfiguration<TaskStatus>
     {
         public TimesheetStatusConfiguration()
         {

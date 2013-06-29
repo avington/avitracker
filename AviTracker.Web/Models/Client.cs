@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MvcApplication1.Models
+namespace AviTracker.Web.Models
 {
     public class Client
     {

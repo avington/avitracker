@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using MvcApplication1.Models;
+using AviTracker.Web.Models;
 
 namespace AviTracker.Web.Repositories
 {

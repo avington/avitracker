@@ -10,7 +10,7 @@ namespace AviTracker.Web.Repositories
         IQueryable<TEntity> Query();
         TEntity Find(int id);
         TEntity Add(TEntity entity, bool persist);
-        void Update(TEntity entity);
+        void Update(TEntity entity, int id);
         TEntity Delete(int id);
         void Save();
     }
